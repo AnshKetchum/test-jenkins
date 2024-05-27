@@ -15,6 +15,7 @@ pipeline {
                 echo "Building.."
                 sh '''
                 echo "doing build stuff.."
+                echo "doing more build stuff"
                 '''
             }
         }
