@@ -1,0 +1,28 @@
+# Create a GitHub Actions workflow YAML file (e.g., main.yml) in the .github/workflows directory
+# This workflow will run only on the main branch
+
+name: Automatically Publush Release
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  set-secret-and-run-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Automated Releases
+        uses: AnshKetchum/auto-changelog-release@third-test
+        with: 
+          GIT_PERSONAL_ACCESS_TOKEN: ${{ secrets.REPOSITORY_TOKEN }}
+
+
+            
