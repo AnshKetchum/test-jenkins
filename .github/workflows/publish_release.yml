@@ -5,9 +5,13 @@ name: Automatically Publush Release
 
 on:
   pull_request:
+    paths:
+      - 'VERSION.txt'
     branches:
       - main
   push:
+    paths:
+      - 'VERSION.txt'
     branches:
       - main
 
